@@ -1,4 +1,4 @@
-//Adobe Illustrator activate middle mouse button as pan tool (space bar effect)
+//Adobe Illustrator and Photoshop activate middle mouse button as pan tool (space bar effect)
 
 #IfWinActive ahk_class illustrator
 MButton::
@@ -9,9 +9,26 @@ Send {LButton Up}
 Send {Space Up} 
 Return
 
+#IfWinActive ahk_class Photoshop
+MButton::
+Send {Space Down}
+Send {LButton Down} 
+KeyWait, MButton
+Send {LButton Up}
+Send {Space Up} 
+Return
+
+//Adobe Illustrator, remap control+mousewheel reversing with alt+mousewheel in order to zoom with ctrl-mousewheel
+
+#IfWinActive ahk_class illustrator
+^WheelUp::!WheelUp
+^WheelDown::!WheelDown
+Return
+
+
 //text replacements
 
-//Put your links to your resume and portfolio into an email message by just typing mycv and pressing spacebar
+//Put your links to your resume and portfolio into an email message by just typing "mycv" (w/o quotes) and pressing spacebar
 
 ::mycv::
 (
