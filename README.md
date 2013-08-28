@@ -1,4 +1,0 @@
-autohotkey
-==========
-
-autohotkey scripts
