@@ -1,0 +1,24 @@
+//Adobe Illustrator activate middle mouse button as pan tool (space bar effect)
+
+#IfWinActive ahk_class illustrator
+MButton::
+Send {Space Down}
+Send {LButton Down} 
+KeyWait, MButton
+Send {LButton Up}
+Send {Space Up} 
+Return
+
+//text replacements
+
+//Put your links to your resume and portfolio into an email message by just typing mycv and pressing spacebar
+
+::mycv::
+(
+This is my CV / Resume
+http://www.example.com/resume.html
+
+My Online Portfolio
+http://www.example.com/portfolio.html
+)
+return
